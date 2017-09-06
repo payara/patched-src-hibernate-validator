@@ -211,6 +211,7 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
                     <instructions>
+                        <Bundle-SymbolicName>${hibernate-validator.bundle-name}</Bundle-SymbolicName>
                         <Import-Package>
                             javax.persistence.*;version="[2.0.0,3.0.0)";resolution:=optional,
                             javax.validation.*;version="[1.0.0,2.0.0)",
