@@ -10,7 +10,7 @@
     <parent>
         <artifactId>hibernate-validator-parent</artifactId>
         <groupId>org.hibernate</groupId>
-        <version>5.2.5.Final.payara-p1</version>
+        <version>5.2.5.Final.payara-p2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
