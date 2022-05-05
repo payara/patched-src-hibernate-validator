@@ -9,6 +9,8 @@ package org.hibernate.validator.internal.engine.messageinterpolation.parser;
 import org.hibernate.validator.internal.util.logging.Log;
 import org.hibernate.validator.internal.util.logging.LoggerFactory;
 
+import static org.hibernate.validator.internal.engine.messageinterpolation.parser.TokenCollector.EL_DESIGNATOR;
+
 /**
  * @author Hardy Ferentschik
  */
@@ -22,14 +24,14 @@ public class ELState implements ParserState {
 
 	@Override
 	public void terminate(TokenCollector tokenCollector) throws MessageDescriptorFormatException {
-		tokenCollector.appendToToken( TokenCollector.EL_DESIGNATOR );
+		tokenCollector.appendToToken( EL_DESIGNATOR );
 		tokenCollector.terminateToken();
 	}
 
 	@Override
 	public void handleNonMetaCharacter(char character, TokenCollector tokenCollector)
 			throws MessageDescriptorFormatException {
-		tokenCollector.appendToToken( TokenCollector.EL_DESIGNATOR );
+		tokenCollector.appendToToken( EL_DESIGNATOR );
 		tokenCollector.appendToToken( character );
 		tokenCollector.terminateToken();
 		tokenCollector.transitionState( new BeginState() );
@@ -40,7 +42,7 @@ public class ELState implements ParserState {
 	public void handleBeginTerm(char character, TokenCollector tokenCollector) throws MessageDescriptorFormatException {
 		tokenCollector.terminateToken();
 
-		tokenCollector.appendToToken( TokenCollector.EL_DESIGNATOR );
+		tokenCollector.appendToToken( EL_DESIGNATOR );
 		tokenCollector.appendToToken( character );
 		tokenCollector.makeELToken();
 		tokenCollector.transitionState( new InterpolationTermState() );
@@ -49,7 +51,7 @@ public class ELState implements ParserState {
 
 	@Override
 	public void handleEndTerm(char character, TokenCollector tokenCollector) throws MessageDescriptorFormatException {
-		throw log.getNonTerminatedParameterException(
+		throw log.getUnbalancedBeginEndParameterException(
 				tokenCollector.getOriginalMessageDescriptor(),
 				character
 		);
@@ -58,8 +60,11 @@ public class ELState implements ParserState {
 	@Override
 	public void handleEscapeCharacter(char character, TokenCollector tokenCollector)
 			throws MessageDescriptorFormatException {
-		tokenCollector.transitionState( new EscapedState( this ) );
-		tokenCollector.next();
+		tokenCollector.appendToToken( EL_DESIGNATOR );
+		tokenCollector.appendToToken( character );
+		// Do not go back to this state after the escape: $\ is not the start of an EL expression
+		ParserState stateAfterEscape = new MessageState();
+		tokenCollector.transitionState( new EscapedState( stateAfterEscape ) );
 	}
 
 	@Override
