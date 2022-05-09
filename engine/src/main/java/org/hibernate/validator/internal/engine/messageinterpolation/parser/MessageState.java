@@ -47,7 +47,7 @@ public class MessageState implements ParserState {
 
 	@Override
 	public void handleEndTerm(char character, TokenCollector tokenCollector) throws MessageDescriptorFormatException {
-		throw log.getUnbalancedBeginEndParameterException(
+		throw log.getNonTerminatedParameterException(
 				tokenCollector.getOriginalMessageDescriptor(),
 				character
 		);
