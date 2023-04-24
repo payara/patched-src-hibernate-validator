@@ -237,11 +237,6 @@
                             org.hibernate.validator.resourceloading;version="${project.version}",
                             org.hibernate.validator.spi.*;version="${project.version}",
                             org.hibernate.validator.valuehandling;version="${project.version}",
-                            org.hibernate.validator.internal.engine;version="${project.version}",
-                            org.hibernate.validator.internal.util;version="${project.version}",
-                            org.hibernate.validator.internal.util.classhierarchy;version="${project.version}",
-                            org.hibernate.validator.internal.util.logging;version="${project.version}",
-                            org.hibernate.validator.internal.util.privilegedactions;version="${project.version}",
                         </Export-Package>
                     </instructions>
                 </configuration>
