@@ -10,7 +10,7 @@
 
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-validator-parent</artifactId>
-    <version>5.2.5.Final.payara-p2-SNAPSHOT</version>
+    <version>5.2.5.Final.payara-p4</version>
     <packaging>pom</packaging>
 
     <name>Hibernate Validator Aggregator</name>
@@ -75,6 +75,10 @@
     </modules>
 
     <properties>
+        <!-- TODO in 6.1: make the names consistent by removing the bundle properties, see HV-1484 -->
+        <hibernate-validator.bundle-name>org.hibernate.validator.hibernate-validator</hibernate-validator.bundle-name>
+        <hibernate-validator-cdi.bundle-name>org.hibernate.validator.hibernate-validator-cdi</hibernate-validator-cdi.bundle-name>
+
         <!-- see http://maven.apache.org/general.html -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <checkstyle.header.file>src/main/build-config/java.header</checkstyle.header.file>

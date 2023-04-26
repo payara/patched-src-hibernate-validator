@@ -26,7 +26,7 @@ import org.easymock.IAnswer;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.hibernate.validator.internal.cdi.ValidationExtension;
+import org.hibernate.validator.cdi.ValidationExtension;
 import org.hibernate.validator.internal.cdi.ValidationProviderHelper;
 import org.hibernate.validator.internal.cdi.ValidatorBean;
 import org.hibernate.validator.internal.cdi.ValidatorFactoryBean;

@@ -19,7 +19,7 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import org.hibernate.validator.internal.cdi.ValidationExtension;
+import org.hibernate.validator.cdi.ValidationExtension;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
