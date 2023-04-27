@@ -1,1 +1,1 @@
-org.hibernate.validator.cdi.ValidationExtension
+org.hibernate.validator.internal.cdi.ValidationExtension
