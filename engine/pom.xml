@@ -11,7 +11,7 @@
     <parent>
         <artifactId>hibernate-validator-parent</artifactId>
         <groupId>org.hibernate</groupId>
-        <version>5.2.5.Final.payara-p4-SNAPSHOT</version>
+        <version>5.2.5.Final.payara-p5-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -237,6 +237,11 @@
                             org.hibernate.validator.resourceloading;version="${project.version}",
                             org.hibernate.validator.spi.*;version="${project.version}",
                             org.hibernate.validator.valuehandling;version="${project.version}",
+                            org.hibernate.validator.internal.engine;version="${project.version}",
+                            org.hibernate.validator.internal.util;version="${project.version}",
+                            org.hibernate.validator.internal.util.classhierarchy;version="${project.version}",
+                            org.hibernate.validator.internal.util.logging;version="${project.version}",
+                            org.hibernate.validator.internal.util.privilegedactions;version="${project.version}",
                         </Export-Package>
                     </instructions>
                 </configuration>
