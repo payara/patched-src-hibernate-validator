@@ -978,7 +978,7 @@
                     <version>${version.deploy.plugin}</version>
                     <configuration>
                         <!-- we use the nexus-staging plugin -->
-                        <skip>true</skip>
+                        <skip>false</skip>
                     </configuration>
                 </plugin>
                 <plugin>
