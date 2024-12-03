@@ -11,7 +11,7 @@
     <parent>
         <groupId>org.hibernate.validator</groupId>
         <artifactId>hibernate-validator-parent</artifactId>
-        <version>8.0.1.Final.payara-p1-SNAPSHOT</version>
+        <version>8.0.1.Final.payara-p1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -269,6 +269,7 @@
                             org.hibernate.validator.constraintvalidation.*;version="${project.version}",
                             org.hibernate.validator.constraintvalidators.*;version="${project.version}",
                             org.hibernate.validator.engine.*;version="${project.version}",
+                            org.hibernate.validator.internal.*;version="${project.version}",
                             org.hibernate.validator.group;version="${project.version}",
                             org.hibernate.validator.messageinterpolation;version="${project.version}",
                             org.hibernate.validator.metadata;version="${project.version}",
