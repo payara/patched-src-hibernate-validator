@@ -12,7 +12,7 @@
 
     <groupId>org.hibernate.validator</groupId>
     <artifactId>hibernate-validator-parent</artifactId>
-    <version>9.0.1.Final.payara-p1-SNAPSHOT</version>
+    <version>9.0.1.Final.payara-p2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Hibernate Validator</name>
